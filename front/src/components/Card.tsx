@@ -8,7 +8,7 @@ const Card: React.FC<IProduct> = ({ name, price, description, image }) => {
             <div className="w-full h-70 overflow-hidden">
                 <img className="w-full h-full object-cover transition delay-150 duration-300 ease-in-out hover:-translate-y-1 scale[60%] hover:scale-[90%]" src={image} alt={name} />
             </div>
-            <p className='p-4 line-clamp-3 text-ellipsis'>Description: {description}</p>
+            <p className='p-4 line-clamp-3 text-ellipsis'>Description: <br />{description}</p>
             <p className='w-full flex justify-end p-4 font-semibold bg-gray-700 text-white rounded-b-md'>Price: ${price} USD</p>
         </div>
     )

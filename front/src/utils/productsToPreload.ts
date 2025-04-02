@@ -58,12 +58,12 @@ export const productsToPreLoad: IProduct[] = [
   },
   {
     id: 7,
-    name: "HomePod mini",
-    price: 99,
+    name: "Apple TV 4K (3rd generation)",
+    price: 169,
     description:
-      "Elevate your home audio experience with the HomePod mini: immersive sound, intelligent assistant, and smart home hub make the HomePod mini the perfect addition to your home. Enjoy a world of music, news, and more with the HomePod mini.",
+      "Apple TV 4K (3rd generation) brings the best of TV together with your favourite Apple devices and services — including the new FaceTime experience on TV.Footnote⁴.",
     image:
-      "https://www.apple.com/v/homepod-mini/a/images/meta/og__d5k62k8b4qka.png",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-tv-4k-hero-select-202210?wid=940&hei=1112&fmt=p-jpg&qlt=95&.v=1664896361408",
     categoryId: 6,
     stock: 10,
   },
