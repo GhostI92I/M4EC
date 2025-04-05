@@ -22,3 +22,31 @@ export interface ICategory {
     id: number;
     name: string
 }
+
+export interface ILoginProps {
+    email: string;
+    password: string;
+}
+
+export interface ILoginErrors {
+    email?: string;
+    password?: string;
+}
+
+export interface IRegisterProps {
+    name: string;
+    email: string;
+    password: string;
+    confpassword: string;
+    adress: string;
+    phone: string;
+}
+
+export interface IRegisterErrors {
+    name?: string;
+    email?: string;
+    password?: string;
+    confpassword?: string;
+    adress?: string;
+    phone?: string;
+}
