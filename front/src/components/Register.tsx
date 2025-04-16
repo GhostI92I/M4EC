@@ -9,11 +9,11 @@ const RegisterComponent = () => {
     <div>
       Register to MoraShop
             <Formik
-                initialValues={{ name: '', email: '', password: '', confpassword: '', adress: '', phone: '' }}
+                initialValues={{ name: '', email: '', password: '', confpassword: '', address: '', phone: '' }}
                 validate={validateRegisterForm}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
-                        alert('Iniciando sesión, bienvenido');
+                        alert('Registro exitoso');
                         console.log("Submit exitoso");
 
                         setSubmitting(false);
@@ -34,9 +34,9 @@ const RegisterComponent = () => {
                         <label>Confirm Password:</label>
                         <Field type="password" name="confpassword" />
                         <ErrorMessage name="confpassword" component="div" />
-                        <label>Adress:</label>
-                        <Field type="text" name="adress" />
-                        <ErrorMessage name="adress" component="div" />
+                        <label>Address:</label>
+                        <Field type="text" name="address" />
+                        <ErrorMessage name="address" component="div" />
                         <label>Phone:</label>
                         <Field type="number" name="phone" />
                         <ErrorMessage name="phone" component="div" />

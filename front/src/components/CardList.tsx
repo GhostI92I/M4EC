@@ -1,9 +1,10 @@
 import { productsToPreLoad } from '@/utils/productsToPreload';
 import React from 'react'
-import Card from './card';
+import Card from './Card';
+import { getProductsDB } from '@/utils/products.helper';
 
-const CardList = () => {
-    const products = productsToPreLoad;
+const CardList = async () => {
+    const products = await getProductsDB();
 
     return (
         <div className='flex flex-wrap items-center gap-4 p-4 justify-center'>
