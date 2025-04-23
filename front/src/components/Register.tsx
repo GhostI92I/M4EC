@@ -3,21 +3,17 @@
 import React from 'react'
 import { validateRegisterForm } from '@/lib/validate';
 import { Field, Formik, Form, ErrorMessage } from 'formik';
+import { register } from '@/utils/auth.helper';
 
 const RegisterComponent = () => {
-  return (
-    <div>
-      Register to MoraShop
+    return (
+        <div>
+            Register to MoraShop
             <Formik
                 initialValues={{ name: '', email: '', password: '', confpassword: '', address: '', phone: '' }}
                 validate={validateRegisterForm}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert('Registro exitoso');
-                        console.log("Submit exitoso");
-
-                        setSubmitting(false);
-                    }, 400);
+                onSubmit={async (values) => {
+                    await register(values)
                 }}
             >
                 {({ isSubmitting, errors }) => (
@@ -46,8 +42,8 @@ const RegisterComponent = () => {
                     </Form>
                 )}
             </Formik>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default RegisterComponent

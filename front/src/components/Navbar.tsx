@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import React from 'react'
+const URL = "http://localhost:3000"
 
 const Navbar = () => {
     return (
@@ -6,7 +8,9 @@ const Navbar = () => {
             <nav className="flex items-center justify-between p-4 rounded-2xl shadow-md">
                 {/* Logo */}
                 <div className="font-bold text-2xl text-gray-800">
-                    MoraShop
+                    <Link href={`${URL}`}>
+                        MoraShop
+                    </Link>
                 </div>
 
                 {/* Buscador */}
@@ -20,9 +24,11 @@ const Navbar = () => {
 
                 {/* Botones principales */}
                 <div className="flex space-x-6">
-                    <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                        Inicio
-                    </button>
+                    <Link href={`${URL}`}>
+                        <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
+                            Inicio
+                        </button>
+                    </Link>
                     <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
                         Productos
                     </button>
