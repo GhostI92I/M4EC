@@ -1,4 +1,4 @@
-import RegisterComponent from '@/components/Register'
+import RegisterComponent from '@/components/UI/Register'
 import React from 'react'
 
 const Register = () => {

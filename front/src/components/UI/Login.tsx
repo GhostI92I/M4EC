@@ -3,6 +3,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { validateLoginForm } from '@/lib/validate';
+import { login } from '@/utils/auth.helper';
 
 const LoginComponent = () => {
     return (
@@ -11,13 +12,10 @@ const LoginComponent = () => {
             <Formik
                 initialValues={{ email: '', password: '' }}
                 validate={validateLoginForm}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert('Iniciando sesión, bienvenido');
-                        console.log("Submit exitoso");
-
-                        setSubmitting(false);
-                    }, 400);
+                onSubmit={async (values) => {
+                    const response = await login(values)
+                    console.log(response);
+                    
                 }}
             >
                 {({ isSubmitting, errors }) => (
