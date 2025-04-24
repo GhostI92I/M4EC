@@ -1,8 +1,13 @@
+'use client'
+
+import { useAuth } from '@/app/context/AuthContext'
 import Link from 'next/link'
 import React from 'react'
 const URL = "http://localhost:3000"
 
 const Navbar = () => {
+    const { userData } = useAuth();
+
     return (
         <div>
             <nav className="flex items-center justify-between p-4 rounded-2xl shadow-md">
@@ -39,12 +44,26 @@ const Navbar = () => {
 
                 {/* Botones adicionales: Carrito y Login */}
                 <div className="flex space-x-6 ml-6">
-                    <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                        <span role="img" aria-label="carrito">🛒</span> Carrito
-                    </button>
-                    <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                        Iniciar sesión
-                    </button>
+                    {
+                        userData?.token ? (
+                            <>
+                                <Link href="/cart" className="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                    <span role="img" aria-label="carrito">🛒</span> Carrito
+                                </Link>
+                                <Link href="/dashboard" className="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                    Profile
+                                </Link>
+                                <Link href="/" className="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                    Log out
+                                </Link>
+                            </>
+                        ) :
+                            <Link href="/login" className="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                Log In
+                            </Link>
+
+                    }
+
                 </div>
             </nav>
         </div>

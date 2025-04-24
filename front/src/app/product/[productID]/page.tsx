@@ -1,3 +1,4 @@
+import ProductDetail from '@/components/UI/ProductDetail';
 import { getProductById } from '@/utils/products.helper';
 import React from 'react'
 
@@ -6,15 +7,7 @@ const DetailProduct = async ({ params }: { params: Promise<{ productID: string }
 
     const product = await getProductById(productID)
     return (
-        <div>
-            <h1>{product.name}</h1>
-            <img src={product.image} alt={product.name} />
-            <h3>Description: {product.description}</h3>
-            <p>Price: ${product.price} USD</p>
-            <p>Stock left: {product.stock}</p>
-            <br />
-            <button>Add to cart</button>
-        </div>
+        <ProductDetail {...product}/>
     )
 }
 

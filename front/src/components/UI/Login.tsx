@@ -4,8 +4,13 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { validateLoginForm } from '@/lib/validate';
 import { login } from '@/utils/auth.helper';
+import { useAuth } from '@/app/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 const LoginComponent = () => {
+    const { setUserData } = useAuth();
+    const router = useRouter();
+
     return (
         <div>
             Login to MoraShop
@@ -14,8 +19,9 @@ const LoginComponent = () => {
                 validate={validateLoginForm}
                 onSubmit={async (values) => {
                     const response = await login(values)
-                    console.log(response);
-                    
+                    const {token, user} = response;
+                    setUserData({token, user})
+                    router.push("/");
                 }}
             >
                 {({ isSubmitting, errors }) => (

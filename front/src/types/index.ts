@@ -50,3 +50,15 @@ export interface IRegisterErrors {
     address?: string;
     phone?: string;
 }
+
+export interface IUserSession {
+    token: string;
+    user: {
+        name: string,
+        email: string,
+        phone: string,
+        address: string,
+        id: number,
+        orders: []
+    }
+}
