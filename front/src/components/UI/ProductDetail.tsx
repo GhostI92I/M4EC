@@ -3,14 +3,27 @@ import { useAuth } from '@/app/context/AuthContext'
 import { IProduct } from '@/types'
 import React from 'react'
 
-const ProductDetail: React.FC<IProduct> = ({ name, image, description, price, stock }) => {
+const ProductDetail: React.FC<IProduct> = ({ id, name, image, description, price, stock, categoryId }) => {
     const { userData } = useAuth();
 
     const handleAddToCart = () => {
         if (!userData?.token) {
             alert("You have to be logged in to add products to your cart")
-        } else{
-            alert("Product added to your cart")
+        } else {
+            const cart: IProduct[] = JSON.parse(localStorage.getItem("cart") || "[]")
+            const productExist = cart.some((item: IProduct) => {
+                if (item.id === id) return true;
+                return false;
+            })
+            if (productExist) {
+                alert("The product thet you are adding, is already in your cart")
+            } else {
+                cart.push({
+                    name, image, id, description, stock, price, categoryId
+                })
+                localStorage.setItem("cart", JSON.stringify(cart))
+                alert("Product added to your cart")
+            }
         }
     }
     return (

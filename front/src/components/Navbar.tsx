@@ -29,10 +29,8 @@ const Navbar = () => {
 
                 {/* Botones principales */}
                 <div className="flex space-x-6">
-                    <Link href={`${URL}`}>
-                        <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                            Inicio
-                        </button>
+                    <Link href={`${URL}`} className="text-blue-600 hover:text-blue-800 focus:outline-none">
+                        Inicio
                     </Link>
                     <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
                         Productos
