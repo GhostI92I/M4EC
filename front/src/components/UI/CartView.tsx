@@ -22,8 +22,14 @@ const CartView = () => {
     }, [])
 
     const handleCheckout = async () => {
-        const idProducts: number[] = cart?.map((product) => product.id)
-        await createOrder(idProducts, userData?.token!)
+        /* Lógica para que el carrito pueda recibir o no los productos y hacer el checkout */
+        if (cart && userData?.token) { /* Si existe carrito y token del usuario */
+            const idProducts: number[] = cart?.map((product) => product.id)
+            await createOrder(idProducts, userData?.token!)
+            setCart([]); /* Una vez hecha la compra se setea el carrito a un arreglo vacío */
+            setTotal(0); /* Una vez que se hace la compra se setea el total a cero */
+            localStorage.setItem("cart","[]") /* Una vez que se hace la compra se varcía el carrito en el localStorage */
+        }
     }
 
     return (
@@ -34,7 +40,7 @@ const CartView = () => {
                         return (
                             <div key={product.id}>
                                 <p>{product.name}</p>
-                                <img className='max-w-2xl' src={product.image} alt={product.name} />
+                                <img className='max-w-2xs' src={product.image} alt={product.name} />
                                 <p>Price: ${product.price}</p>
                             </div>
                         )
