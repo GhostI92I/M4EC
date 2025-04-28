@@ -29,9 +29,6 @@ export async function getOrders(token: string) {
                 "Content-type": "application/json",
                 Authorization: token
             },
-            body: JSON.stringify({
-                products
-            })
         })
         return response.json();
     } catch (error: any) {
