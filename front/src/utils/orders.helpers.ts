@@ -19,3 +19,22 @@ export async function createOrder(products: number[], token: string) {
         throw new Error(error);
     }
 };
+
+
+export async function getOrders(token: string) {
+    try {
+        const response = await fetch(`${APIURL}/orders`, {
+            method: 'GET',
+            headers: {
+                "Content-type": "application/json",
+                Authorization: token
+            },
+            body: JSON.stringify({
+                products
+            })
+        })
+        return response.json();
+    } catch (error: any) {
+        throw new Error(error);
+    }
+};

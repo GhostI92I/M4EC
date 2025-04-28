@@ -2,11 +2,17 @@
 
 import { useAuth } from '@/app/context/AuthContext'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 const URL = "http://localhost:3000"
 
 const Navbar = () => {
     const { userData } = useAuth();
+
+    const handleLogout = () => {
+        if (userData?.token) {
+            alert("User logged out");
+        }
+    }
 
     return (
         <div>
@@ -51,7 +57,7 @@ const Navbar = () => {
                                 <Link href="/dashboard" className="text-blue-600 hover:text-blue-800 focus:outline-none">
                                     Profile
                                 </Link>
-                                <Link href="/" className="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                <Link onClick={handleLogout} href="/" className="text-blue-600 hover:text-blue-800 focus:outline-none">
                                     Log out
                                 </Link>
                             </>
