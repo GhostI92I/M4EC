@@ -23,7 +23,7 @@ export async function createOrder(products: number[], token: string) {
 
 export async function getOrders(token: string) {
     try {
-        const response = await fetch(`${APIURL}/orders`, {
+        const response = await fetch(`${APIURL}/users/orders`, {
             method: 'GET',
             headers: {
                 "Content-type": "application/json",

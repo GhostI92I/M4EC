@@ -9,7 +9,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     return (
         <div>
             <Link href={"/dashboard"}>Profile</Link>
-            <Link href={"dashboard/orders"}>Orders</Link>
+            <Link href={"/dashboard/orders"}>Orders</Link>
             {children}
         </div>
     )
