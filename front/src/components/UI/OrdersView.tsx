@@ -1,12 +1,13 @@
 'use client'
 
 import { useAuth } from "@/app/context/AuthContext"
+import { IOrder } from "@/types";
 import { getOrders } from "@/utils/orders.helpers";
 import { useEffect, useState } from "react";
 
 const OrdersView = () => {
     const { userData } = useAuth();
-    const [orders, setOrders] = useState([]);
+    const [orders, setOrders] = useState<IOrder[]>([]);
 
     const loadOrders = async () => {
         if (userData?.token) {
