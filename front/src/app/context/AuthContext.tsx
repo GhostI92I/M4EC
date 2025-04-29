@@ -6,11 +6,13 @@ import { createContext, useContext, useEffect, useState } from "react"
 export interface AuthContextProps {
     userData: IUserSession | null,
     setUserData: (userData: IUserSession | null) => void,
+    logout: () => void
 }
 
 export const AuthContext = createContext<AuthContextProps>({
     userData: null,
-    setUserData: () => { }
+    setUserData: () => { },
+    logout: () => { }
 })
 
 export interface AuthProviderProps {
@@ -24,15 +26,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         if (userData) {
             localStorage.setItem("userSession", JSON.stringify({ token: userData.token, user: userData.user }))
         }
-    }, [userData])
+    }, [userData]);
 
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem("userSession")!)
         setUserData(userData)
-    }, [])
+    }, []);
+
+    const logout = () => {
+        localStorage.removeItem('userSession')
+        setUserData(null);
+    }
 
     return (
-        <AuthContext.Provider value={{ userData, setUserData }}>
+        <AuthContext.Provider value={{ userData, setUserData, logout }}>
             {children}
         </AuthContext.Provider>
     )

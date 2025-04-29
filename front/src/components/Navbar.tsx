@@ -6,11 +6,12 @@ import React, { useState } from 'react'
 const URL = "http://localhost:3000"
 
 const Navbar = () => {
-    const { userData } = useAuth();
+    const { userData, logout } = useAuth();
 
     const handleLogout = () => {
         if (userData?.token) {
             alert("User logged out");
+            logout();
         }
     }
 
