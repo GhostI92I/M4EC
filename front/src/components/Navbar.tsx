@@ -36,13 +36,13 @@ const Navbar = () => {
                 {/* Botones principales */}
                 <div className="flex space-x-6">
                     <Link href={`${URL}`} className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                        Inicio
+                        Home
                     </Link>
                     <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                        Productos
+                        Products
                     </button>
                     <button className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                        Contacto
+                        Contact Us
                     </button>
                 </div>
 
