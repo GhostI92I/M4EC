@@ -28,20 +28,21 @@ const CartView = () => {
             await createOrder(idProducts, userData?.token!)
             setCart([]); /* Una vez hecha la compra se setea el carrito a un arreglo vacío */
             setTotal(0); /* Una vez que se hace la compra se setea el total a cero */
-            localStorage.setItem("cart","[]") /* Una vez que se hace la compra se varcía el carrito en el localStorage */
+            localStorage.setItem("cart", "[]") /* Una vez que se hace la compra se varcía el carrito en el localStorage */
         }
     }
 
     return (
         <div className='flex flex-row items-center justify-around w-full px-5'>
             <div>
-                Your products {
+                <h1 className='flex justify-center m-3'>Your products </h1>
+                {
                     cart?.length ? cart?.map((product: IProduct) => {
                         return (
-                            <div key={product.id}>
-                                <p>{product.name}</p>
+                            <div key={product.id} className='border-2 rounded-3xl justify-items-center gap-2'>
+                                <p className='font-extrabold'>{product.name}</p>
                                 <img className='max-w-2xs' src={product.image} alt={product.name} />
-                                <p>Price: ${product.price}</p>
+                                <p className='font-semibold'>Price: ${product.price}</p>
                             </div>
                         )
                     }) : (
@@ -50,10 +51,12 @@ const CartView = () => {
                 }
             </div>
 
-            <div>
-                Total: ${total} USD
+            <div className='bg-gray-700 text-white'>
+                <h2 className='flex justify-center m-3'>
+                    Total: ${total} USD
+                </h2>
                 <br />
-                <button onClick={handleCheckout}>Checkout</button>
+                <button onClick={handleCheckout} className='flex w-50 bg-white text-black justify-center border-4 border-black gap-2.5 m-2'>Checkout</button>
             </div>
         </div>
     )

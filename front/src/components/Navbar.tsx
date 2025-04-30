@@ -53,7 +53,7 @@ const Navbar = () => {
                         userData?.token ? (
                             <>
                                 <Link href="/cart" className="text-blue-600 hover:text-blue-800 focus:outline-none">
-                                    <span role="img" aria-label="carrito">🛒</span> Carrito
+                                    <span role="img" aria-label="carrito">🛒</span> Cart
                                 </Link>
                                 <Link href="/dashboard" className="text-blue-600 hover:text-blue-800 focus:outline-none">
                                     Profile
