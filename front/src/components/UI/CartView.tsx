@@ -39,14 +39,18 @@ const CartView = () => {
                 {
                     cart?.length ? cart?.map((product: IProduct) => {
                         return (
-                            <div key={product.id} className='border-2 rounded-3xl justify-items-center gap-2'>
+                            <div key={product.id} className='border-2 rounded-3xl justify-items-center gap-2 m-4'>
                                 <p className='font-extrabold'>{product.name}</p>
                                 <img className='max-w-2xs' src={product.image} alt={product.name} />
                                 <p className='font-semibold'>Price: ${product.price}</p>
                             </div>
                         )
                     }) : (
-                        <div>You don't have products in your cart</div>
+                        <div>
+                            <h1 className='text-red-900'>
+                                You don't have products in your cart
+                            </h1>
+                        </div>
                     )
                 }
             </div>
