@@ -6,23 +6,23 @@ const Footer = () => {
             <footer className="flex justify-between flex-1/3 footer sm:footer-horizontal bg-base-200 text-base-content p-10">
                 <nav className='p-2'>
                     <h6 className="footer-title font-extrabold">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <a className="link link-hover pr-2">Branding</a>
+                    <a className="link link-hover pr-2">Design</a>
+                    <a className="link link-hover pr-2">Marketing</a>
+                    <a className="link link-hover pr-2">Advertisement</a>
                 </nav>
                 <nav className='p-2'>
                     <h6 className="footer-title font-extrabold">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <a className="link link-hover pr-2">About us</a>
+                    <a className="link link-hover pr-2">Contact</a>
+                    <a className="link link-hover pr-2">Jobs</a>
+                    <a className="link link-hover pr-2">Press kit</a>
                 </nav>
                 <nav className='p-2'>
                     <h6 className="footer-title font-extrabold">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <a className="link link-hover pr-2">Terms of use</a>
+                    <a className="link link-hover pr-2">Privacy policy</a>
+                    <a className="link link-hover pr-2">Cookie policy</a>
                 </nav>
             </footer>
             <footer className="flex justify-between footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">

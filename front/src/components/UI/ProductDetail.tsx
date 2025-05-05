@@ -27,18 +27,34 @@ const ProductDetail: React.FC<IProduct> = ({ id, name, image, description, price
         }
     }
     return (
-        <div>
-            <div>
-                <h1>{name}</h1>
-                <img src={image} alt={name} />
-                <h3>Description: {description}</h3>
-                <p>Price: ${price} USD</p>
-                <p>Stock left: {stock}</p>
-                <br />
-                <button onClick={handleAddToCart}>Add to cart</button>
+        <div className="max-w-md mx-auto p-6 shadow-2xl">
+          <div className="bg-white shadow-sm p-6 space-y-4">
+            <h1 className="text-2xl font-bold text-gray-800">{name}</h1>
+      
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-64 object-cover rounded-xl shadow-sm"
+            />
+      
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-gray-700">Descripción</h3>
+              <p className="text-gray-600 text-sm">{description}</p>
+      
+              <p className="text-lg font-bold text-gray-800">Precio: ${price} USD</p>
+              <p className="text-sm text-gray-600">Stock disponible: {stock}</p>
             </div>
+      
+            <button
+              onClick={handleAddToCart}
+              className="btn btn-primary w-full bg-blue-800 text-white rounded-2xl p-2"
+            >
+              Añadir al carrito
+            </button>
+          </div>
         </div>
-    )
+      )
+      
 }
 
 export default ProductDetail

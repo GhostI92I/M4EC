@@ -35,11 +35,11 @@ const CartView = () => {
     return (
         <div className='flex flex-row items-center justify-around w-full px-5'>
             <div>
-                <h1 className='flex justify-center m-3'>Your products </h1>
+                <h1 className='flex justify-center m-3  p-2 shadow-2xl'>Your products </h1>
                 {
                     cart?.length ? cart?.map((product: IProduct) => {
                         return (
-                            <div key={product.id} className='border-2 rounded-3xl justify-items-center gap-2 m-4'>
+                            <div key={product.id} className='border-2 rounded-3xl justify-items-center gap-2 m-4 shadow-sm'>
                                 <p className='font-extrabold'>{product.name}</p>
                                 <img className='max-w-2xs' src={product.image} alt={product.name} />
                                 <p className='font-semibold'>Price: ${product.price}</p>
@@ -55,12 +55,12 @@ const CartView = () => {
                 }
             </div>
 
-            <div className='bg-gray-700 text-white'>
+            <div className='bg-gray-700 text-white p-4 font-bold rounded-3xl'>
                 <h2 className='flex justify-center m-3'>
                     Total: ${total} USD
                 </h2>
                 <br />
-                <button onClick={handleCheckout} className='flex w-50 bg-white text-black justify-center border-4 border-black gap-2.5 m-2'>Checkout</button>
+                <button onClick={handleCheckout} className='flex w-50 bg-white text-black justify-center gap-2.5 m-2 rounded-2xl shadow-2xl'>Checkout</button>
             </div>
         </div>
     )
