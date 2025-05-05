@@ -8,7 +8,7 @@ const DashboardComponent = () => {
 
     return (
         <div className="max-w-xl mx-auto p-6">
-            <div className="bg-white shadow-sm rounded-2xl p-6 space-y-4 border">
+            <div className="bg-white shadow-xl rounded-2xl p-6 space-y-4">
                 <h1 className="text-2xl font-bold text-gray-800">Perfil</h1>
 
                 <div className="space-y-2">
