@@ -2,7 +2,7 @@
 
 import { useAuth } from '@/app/context/AuthContext'
 import Link from 'next/link'
-import React, { useState } from 'react'
+/* import React, { useState } from 'react' */
 const URL = "http://localhost:3000"
 
 const Navbar = () => {

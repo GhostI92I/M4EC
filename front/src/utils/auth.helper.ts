@@ -1,4 +1,4 @@
-import { ILoginProps, IProduct, IRegisterProps } from "@/types";
+import { ILoginProps, IRegisterProps } from "@/types";
 
 const APIURL = process.env.NEXT_PUBLIC_API_URL;
 

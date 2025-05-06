@@ -1,4 +1,4 @@
-import { productsToPreLoad } from '@/utils/productsToPreload';
+/* import { productsToPreLoad } from '@/utils/productsToPreload'; */
 import React from 'react'
 import Card from './Card';
 import { getProductsDB } from '@/utils/products.helper';

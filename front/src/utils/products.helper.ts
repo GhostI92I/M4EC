@@ -13,7 +13,7 @@ export async function getProductsDB(): Promise<IProduct[]> {
 }
 
 /* Al no existir una función para retornar un producto por ID, utilizamos la siguiente función para que cumpla con dicha función y a la vez, ésta función no hace una solicitud inecesaria al backend */
-export async function getProductById(id: String): Promise<IProduct> {
+export async function getProductById(id: string): Promise<IProduct> {
     try {
         const products: IProduct[] = await getProductsDB();
         const productFiltered = products.find((product) => product.id.toString() === id)
