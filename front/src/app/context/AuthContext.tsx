@@ -2,6 +2,7 @@
 
 import { IUserSession } from "@/types"
 import { createContext, useContext, useEffect, useState } from "react"
+import Cookies from 'js-cookie';
 
 export interface AuthContextProps {
     userData: IUserSession | null,
@@ -25,6 +26,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     useEffect(() => {
         if (userData) {
             localStorage.setItem("userSession", JSON.stringify({ token: userData.token, user: userData.user }))
+            Cookies.set("userSession", JSON.stringify({ token: userData.token, user: userData.user }))
         }
     }, [userData]);
 
@@ -36,6 +38,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const logout = () => {
         localStorage.removeItem('userSession')
         setUserData(null);
+        Cookies.remove("userSession")
     }
 
     return (
