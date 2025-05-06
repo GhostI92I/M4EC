@@ -10,4 +10,3 @@ const Cart = () => {
 }
 
 export default Cart
-Cart
