@@ -2,6 +2,7 @@
 import { useAuth } from '@/app/context/AuthContext';
 import { IProduct } from '@/types';
 import { createOrder } from '@/utils/orders.helpers';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 const CartView = () => {
@@ -41,7 +42,7 @@ const CartView = () => {
                         return (
                             <div key={product.id} className='border-2 rounded-3xl justify-items-center gap-2 m-4 shadow-sm'>
                                 <p className='font-extrabold'>{product.name}</p>
-                                <img className='max-w-2xs' src={product.image} alt={product.name} />
+                                <Image className='max-w-2xs' src={product.image} alt={product.name} />
                                 <p className='font-semibold'>Price: ${product.price}</p>
                             </div>
                         )

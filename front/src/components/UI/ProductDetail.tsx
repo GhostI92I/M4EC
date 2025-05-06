@@ -1,6 +1,7 @@
 'use client'
 import { useAuth } from '@/app/context/AuthContext'
 import { IProduct } from '@/types'
+import Image from 'next/image'
 import React from 'react'
 
 const ProductDetail: React.FC<IProduct> = ({ id, name, image, description, price, stock, categoryId }) => {
@@ -31,7 +32,7 @@ const ProductDetail: React.FC<IProduct> = ({ id, name, image, description, price
           <div className="bg-white shadow-sm p-6 space-y-4">
             <h1 className="text-2xl font-bold text-gray-800">{name}</h1>
       
-            <img
+            <Image
               src={image}
               alt={name}
               className="w-full h-64 object-cover rounded-xl shadow-sm"
