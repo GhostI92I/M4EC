@@ -22,13 +22,13 @@ const OrdersView = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-6">
-      <h1 className="text-2xl font-bold text-gray-800">Tus pedidos</h1>
+      <h1 className="text-2xl font-bold text-gray-800 flex justify-center">Tus pedidos</h1>
 
       {orders.length ? (
         orders.map((item) => (
           <div
             key={item.id}
-            className="bg-white border rounded-xl p-4 shadow-sm space-y-2"
+            className="bg-white rounded-xl p-4 shadow-2xl space-y-2"
           >
             <p
               className={`text-sm font-semibold ${
